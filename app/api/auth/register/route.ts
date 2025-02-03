@@ -23,6 +23,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ message: "Usuario registrado", user: { id: user.id, email: user.email } }, { status: 201 });
   } catch (error) {
+    console.error(error);
     return NextResponse.json({ error: "Error al registrar usuario" }, { status: 400 });
   }
 }

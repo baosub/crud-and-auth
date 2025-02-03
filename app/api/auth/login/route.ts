@@ -30,6 +30,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ message: "Login exitoso", user: { id: user.id, email: user.email } });
   } catch (error) {
+    console.error(error);
     return NextResponse.json({ error: "Error en el login" }, { status: 400 });
   }
 }
